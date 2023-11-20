@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/style2.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+    function showMenu()
+    {
+    var navlink= document.getElementById("navLinks");
+    navlink.style.display="block";
+    navlink.style.right="0";
+    }
+    function hideMenu()
+    {
+      var navlink= document.getElementById("navLinks");
+      navlink.style.display="none";
+    }
+</script>
+</head>
+    <body>
+        <nav>
+            <a href="anvesha.html" class="logo">
+                <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+             <p><b>P-TRACK</b></p>
+            </a>            
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>    
+                <ul class="components">
+                    <li id="s"><a href="../html/anvesha.html">HOME</a></li>
+                    <li id="s"><a href="../html/about.html">ABOUT</a></li>
+                    <li id="s"><a href="../html/announce.html">ANNOUNCEMENTS</a></li>
+                    <li id="s"><a href="../html/contact.html">CONTACT</a></li>
+                    <li id="s"><a href="../html/dashboard.html">DASHBOARD</a></li>
+                    <li><button>Join Us!</button></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        
+        <section class="cont">
+            <h1>Contact Details</h1>
+            <div class="row" style="justify-content: space-around;">
+                <div class="steps-contact">
+                    <img src="whatsapp.jpeg" width="300px" height="300px"><br><br>
+                    <h3>CONTACT</h3>
+                    
+                </div>
+                <div class="steps-contact">
+                    <img src="Gmail.jpeg" width="390px" height="300px"><br><br>
+                    <h3>GMAIL</h3>
+
+                </div>
+              </div>
+              <div class="row" style="justify-content: space-around;">
+                <div class="steps-contact">
+                  <img src="Facebook.jpeg" width="300px" height="300px"><br><br>
+                  <h3>GADGETS</h3>
+                </div>
+                <div class="steps-contact">
+                  <img src="Instagram.jpeg" width="390px" height="300px"><br><br>
+                  <h3>TICKETS</h3>
+                </div>
+                
+                </div>
+        </section>
+        <br><br><br><br><br><br><br>
+        <footer class="footer">
+            <div class="whole" style="justify-content : space-around;">
+                <p>DESIGN : <span>ANVESHA</span></p>
+                <p>COPYRIGHTS 2022 <span>P-TRACK</span></p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <body>
+        <section class="header">
+          
+            <nav>
+                <a href="anvesha.html" class="logo">
+                    <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+                 <p><b>P-TRACK</b></p>
+                </a>            
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>    
+                    <ul class="components">
+                        <li id="s"><a href="../html/anvesha.html">HOME</a></li>
+                        <li id="s"><a href="../html/about.html">ABOUT</a></li>
+                        <li id="s"><a href="../html/announce.html">ANNOUNCEMENTS</a></li>
+                        <li id="s"><a href="../html/contact.html">CONTACT</a></li>
+                        <li id="s"><a href="../html/dashboard.html">DASHBOARD</a></li>
+                        <li><button>Join Us!</button></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <br><br><br><br><br><br>
+            <div class="mainline">
+                <br><br><br>
+                <h1>Plastic-Tracker</h1><br>
+                <p>Live in the moment but plan for future</p>
+                <button style="width:105px;" onclick="location.href='signup.html'">Sign Up!</button>&emsp;&emsp;
+                <a href="../html/login.html"><button style="width:105px;">Login!</button></a>
+                <br><br><br><br><br><br>
+            </div> 
+    </section>
+        <!--2ND SECTION-->
+        <section class="info">
+            <h1>What Is Plastic-Tracker ?</h1><br><br>
+            <p>While it might seem that addressing chemical waste issues is as simple as
+             recycling or washing empty bottles, the reality is that polluting plastic 
+             can vary in size from large to small.
+            Even if you don't want it on those products, plastic is all around us. 
+            Milk boxes are stuffed with cardboard, water bottles are strewn around, 
+            and some items can also contain 
+            small plastic pieces. Chemical pollutants 
+            are more likely to enter the environment and cause harm each time one of these items is discarded or swept away.
+            Plastic is one of the many widely available but overused items in today's world due to its low 
+            cost. When burned in the open, this does  not decompose quickly and pollutes the underlying 
+            soil or groundwater. Commercial fisheries are an unavoidable  requirement in many parts of the world, 
+            but many people consume fish daily. Nonetheless, this industry has culminated in a variety 
+             of solutions to the problem of   plastic pollution in the oceans. Plastic is often used in the
+           nets used by certain large-scale troll operations. Second, they spend a lot of time submerged in water, where they can freely release contaminants, but they are frequently dissolved or killed, leaving them to live wherever they land. It not only destroys and threatens native animals, but it also allows chemicals to swim away and contaminate nearby fish.
+             The majority of the items are made of plastic, but most of the materials are not biodegradable,
+              making disposal difficult. There were no natural methods in place to recycle non-biodegradable 
+             plastics. It cannot be recycled or left to starve in the manner in which traditional waste is 
+             discarded or spilt.  Also, reuse does not reduce steel use because it recycles
+              existing plastics in a new shape. In a variety of ways, the method of paper recycling 
+              can result in the release of plastic allergens.
+            </p>
+        </section>
+
+        <section class="how">
+            <h1>Follow Three Simple Steps</h1>
+            <div class="row">
+                <div class="steps">
+                    <img src="../img/purchase.jpg" width="220px" height="200px"><br><br>
+                    <h3>PURCHASE</h3>
+                 
+                </div>
+                <div class="steps">
+                    <img src="../img/exchange.png"><br><br>
+                    <h3>EXCHANGE</h3>
+                    
+                </div>
+                <div class="steps">
+                    <img src="../img/ec1.png" width="200px" height="200px"><br><br>
+                    <h3>EARN COUPONS!</h3>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br><br><br>
+        <footer class="footer">
+            <div class="whole" style="justify-content : space-around;">
+                <p>DESIGN : <span>ANVESHA</span></p>
+                <p>COPYRIGHTS 2022 <span>P-TRACK</span></p>
+            </div>
+        </footer>
+        <!--JAVASCRIPT RESPONSIVE MENU-->
+        <script>
+            function showMenu()
+            {
+            var navlink= document.getElementById("navLinks");
+            navlink.style.display="block";
+            navlink.style.right="0";
+            }
+            function hideMenu()
+            {       
+           var navlink= document.getElementById("navLinks");
+           navlink.style.display="none";
+            }      
+        </script>     
+    </body>
+</html>

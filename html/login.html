@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/style2.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <body class="join">
+        <section >
+          
+            <nav>
+                <a href="anvesha.html" class="logo">
+                    <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+                 <p><b>P-TRACK</b></p>
+                </a>            
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>    
+                    <ul class="components">
+                        <li id="s"><a href="../html/anvesha.html">HOME</a></li>
+                        <li id="s"><a href="../html/about.html">ABOUT</a></li>
+                        <li id="s"><a href="../html/announce.html">ANNOUNCEMENTS</a></li>
+                        <li id="s"><a href="../html/contact.html">CONTACT</a></li>
+                        <li id="s"><a href="">DASHBOARD</a></li>
+                        <li><button>Join Us!</button></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+        </section>
+       
+        <div class="sform">
+            <br>
+            <h1>Login</h1><br>
+            <form action="../php/login.php" method="post" name="loginform">
+                <div class="login">
+                    <div class="inputbox">
+                    <div class="select">
+                    <span class="details">Category:</span>&emsp;
+                    <select class="category" name="cat">
+                    <option value="none" id="o">Select category</option>
+                    <option value="admin" id="o">admin</option>
+                    <option value="manufacturer" id="o">Manufacturer</option>
+                    <option value="garbage" id="o">Garbage Collector</option>
+               <!--     <option value="wholesaler" id="o">Wholesaler</option>-->
+                    <option value="retailer" id="o">Retailer</option>
+                    <option value="recycler" id="o">Recycler</option>
+                    <option value="customer" id="o">Customer</option>
+                    </select>
+                    </div>
+                    </div>
+                    <br>
+                    <div class="inputbox">
+                        <span class="details">Username:</span>&emsp;
+                        <input type="text" placeholder="Your Username" name="username" required>
+                    </div>
+                    <br>
+                    <div class="inputbox">
+                        <span class="details">Password:</span>&emsp;
+                        <input type="password" placeholder="Your Password" name="password" required>
+                    </div> 
+                </div>
+                <br><br>
+                <div class="mandatory">
+                <p><span><input type="checkbox" value="true" name="checkbox" required></span> I agree to terms and conditions</p><br>
+                <button type="submit" class="signinbt" name="login" style="font-size: 18px;" onclick="val();">Login</button><br><br>
+            </div>
+                <hr>
+                <div class="noacc">
+                <p class="or">OR</p>
+                <p>Don't have an account ? <a href="signup.html">Signup</a></p>
+            </div>
+            </form><br>
+        </div>
+        <br><br> <br><br> <br><br>
+        <script>
+            function showMenu()
+            {
+            var navlink= document.getElementById("navLinks");
+            navlink.style.display="block";
+            navlink.style.right="0";
+            }
+            function hideMenu()
+            {
+              var navlink= document.getElementById("navLinks");
+              navlink.style.display="none";
+            }
+            function val()
+            {
+                var uname=document.loginform.username.value;
+                var catg=document.loginform.cat.value;
+                var pwd=document.loginform.password.value;
+                var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var check=document.loginform.checkbox.value;
+                var v=0;
+                if(catg=="none")
+                {
+                    event.preventDefault();
+                    alert("Select a category");
+                    v=1;
+                    document.loginform.cat.style.borderColor="Red";
+                }
+                if (!filter.test(uname))
+                {
+                    alert('Enter a valid email');
+                    event.preventDefault();
+                    v=1;
+                    document.loginform.username.style.borderColor="Red";
+                }
+                if(pwd.length<8)
+                {
+                    event.preventDefault();
+                    alert("Password cant be less than 8 characters");
+                    v=1;
+                    document.loginform.password.style.borderColor="Red";
+                }
+                if(document.checkbox.checked!=1)
+                {
+                    event.preventDefault();
+                    alert("Please check the check box");
+                    v=1;
+                   // document.loginform.checkbox.style.borderColor="Red";
+                }
+                if(v==0)
+                {
+                    document.loginform.submit();
+                }
+            }
+        </script>
+    </body>
+</html>

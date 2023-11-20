@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+    <body class="join">
+    <nav>
+        <a href="anvesha.html" class="logo">
+            <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+         <p><b>P-TRACK</b></p>
+        </a>            
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>    
+            <ul class="components">
+                <li id="s"><a href="anvesha.html">HOME</a></li>
+                <li id="s"><a href="">ABOUT</a></li>
+                <li id="s"><a href="">ANNOUNCEMENTS</a></li>
+                <li id="s"><a href="">CONTACT</a></li>
+                <li id="s"><a href="">DASHBOARD</a></li>
+                <li><button onclick="location.href='signup.html'">Join Us!</button></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <!--MAIN FORM DIV-->
+    <div class="sform" id="mainform" style="margin-top:10px;">
+    <div class="infos"><b><h1>Email Verification</h1></b></div>
+    <div class="infos">An email with an otp is sent to your account</div>
+    <form action="../php/verification.php" method="post" name="fpage">
+        <div class="infos">
+            <div class="inputbox">
+                <span class="details">Enter OTP : </span><br>
+                <input type="text" placeholder="OTP" name="otp" style="text-align:center;width:250px;"><br>
+            </div>
+        </div>
+        <div class="infos">
+            <a href="../php/sendmail.php" method="post"><button type="button" name="submit1" style="width:150px; margin : 0px 10px;">Resend OTP</button></a>
+                <button type="submit" onclick="val();" name="submit" style="width:150px;margin : 0px 5px;">Submit OTP</button><br>
+            </div> 
+        </div>      
+    </form>
+    </div>
+    <br><br><br>
+    <footer class="footer">
+        <div class="whole" style="justify-content : space-around;">
+            <p>DESIGN : <span>ANVESHA</span></p>
+            <p>COPYRIGHTS 2022 <span>P-TRACK</span></p>
+        </div>
+    </footer>
+    <!--JAVASCRIPT FORM VALIDATION-->
+    <script>
+        function val()
+        {
+            var otps=fpage.otp.value;
+            if(isNaN(otps) || otps.length!=4)
+            {
+                alert('Enter a valid otp');
+                event.preventDefault();
+                document.fpage.otp.style.borderColor="Red";
+                return false;
+             }
+        }   
+        function showMenu()
+        {
+        var navlink= document.getElementById("navLinks");
+        navlink.style.display="block";
+        navlink.style.right="0";
+        }
+        function hideMenu()
+        {
+          var navlink= document.getElementById("navLinks");
+          navlink.style.display="none";
+        }
+    </script>
+</body>
+</html>

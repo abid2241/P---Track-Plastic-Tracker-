@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+    function showMenu()
+    {
+    var navlink= document.getElementById("navLinks");
+    navlink.style.display="block";
+    navlink.style.right="0";
+    }
+    function hideMenu()
+    {
+      var navlink= document.getElementById("navLinks");
+      navlink.style.display="none";
+    }
+</script>
+</head>
+    <body class="join">
+    <nav>
+        <a href="anvesha.html" class="logo">
+            <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+         <p><b>P-TRACK</b></p>
+        </a>            
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>    
+            <ul class="components">
+                <li id="s"><a href="anvesha.html">HOME</a></li>
+                <li id="s"><a href="">ABOUT</a></li>
+                <li id="s"><a href="">ANNOUNCEMENTS</a></li>
+                <li id="s"><a href="">CONTACT</a></li>
+                <li id="s"><a href="">DASHBOARD</a></li>
+                <li><button onclick="location.href='signup.html'">Join Us!</button></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <div class="sform" name="cust">
+        <p class="infos1" name="info">Thankyou for signing up with us!<br>
+        You will shortly receive an email regarding your account set up.<br><hr style="background-color : #999; height: 1px; border: none;"></p>
+        <p class="infos"><b>Disclaimer :</b> Use your email and password to login to your account.<br>
+        Click below to begin your journey!<br><br>
+        <button type="button" onclick="location.href='../html/signup.html'">Login!</button></p>
+    </div>
+    </body>
+</html>

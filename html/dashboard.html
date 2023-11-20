@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <body class="join">
+    <nav>
+        <a href="anvesha.html" class="logo">
+            <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+         <p><b>P-TRACK</b></p>
+        </a>            
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>    
+            <ul class="components">
+                <li id="s"><a href="../html/anvesha.html">HOME</a></li>
+                <li id="s"><a href="../html/about.html">ABOUT</a></li>
+                <li id="s"><a href="../html/announce.html">ANNOUNCEMENTS</a></li>
+                <li id="s"><a href="../html/contact.html">CONTACT</a></li>
+                <li id="s"><a href="../html/dashboard.html">DASHBOARD</a></li>
+                <li><button onclick="location.href='signup.html'">Join Us!</button></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  
+        <div class="sform">
+            <h1 style="text-align:center;">Dasboard!!</h1><br><br>
+                <div class="select">
+                    <b> What do you want to view :&emsp;</b><br><br>
+                    <a href="../php/stateconsumption.php"><button style="width : 250px;">State Wise Consumption</button></a><br><br>
+                    <a href="../php/staterecycle.php"><button style="width : 250px;">State Wise Recycling</button></a><br><br>
+                    <a href="../php/daywiseconsumption.php"><button style="width : 250px;">Day Wise Consumption</button></a><br><br>
+                    <a href="../php/daywiserecycle.php"><button style="width : 250px;">Day Wise Recycling</button></a><br><br>
+                    <a href="../php/piechart.php"><button style="width : 250px;">Plastic Waste</button></a><br><br>
+            </div>
+        </div>
+        <br><br><br>
+        <footer class="footer">
+            <div class="whole" style="justify-content : space-around;">
+                <p>DESIGN : <span>ANVESHA</span></p>
+                <p>COPYRIGHTS 2022 <span>P-TRACK</span></p>
+            </div>
+        </footer>
+        <script>
+            function val()
+            {
+            var p=document.fpage.cat.value;
+            if(p=="none")
+            {
+                event.preventDefault();
+                alert("Select a category");
+            }
+            }
+            function showMenu()
+            {
+            var navlink= document.getElementById("navLinks");
+            navlink.style.display="block";
+            navlink.style.right="0";
+            }
+            function hideMenu()
+            {
+              var navlink= document.getElementById("navLinks");
+              navlink.style.display="none";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,141 @@
+<html lang="en">
+    <head>
+       <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Poppins",sans-serif;
+}
+h1{
+   
+    color:#099;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 30px;
+}
+#map {
+    width: 100%;
+    height: 80vh;
+    padding: 10px;
+}
+
+</style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Browser Location</title>
+       <link rel="stylesheet" href="/style.css">
+        
+        
+    </head>
+    <body>
+
+        <h1> Recyclers Near You</h1>
+          <div id="map"></div>
+          
+          <script src="../js/app.js"></script>
+          <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOLtC-LXjDjcNXFqz6PaXq9nrawWXTvo4&callback=initMap"
+    async
+    ></script>
+    <script>
+        x = navigator.geolocation;
+x.getCurrentPosition(success, failure);
+function success(position) {
+  var myLat = position.coords.latitude;
+  var myLong = position.coords.longitude; 
+  var myLat1 = 24.7561;
+
+  var myLong1 = 92.79112;
+  var myLat2 =  24.8645;
+
+  var myLong2 = 92.5644;
+  var myLat3 =24.9250;
+
+  var myLong3 = 92.789;
+  var myLat4 = 24.8139;
+
+  var myLong4 = 92.7129;
+ 
+
+    var coords = new google.maps.LatLng(myLat,myLong);
+    var coords1 = new google.maps.LatLng(myLat1,myLong1);
+    var coords2 = new google.maps.LatLng(myLat2,myLong2);
+    var coords3 = new google.maps.LatLng(myLat3,myLong3);
+    var coords4 = new google.maps.LatLng(myLat4,myLong4);
+
+    
+   
+    var mapOptions =  {
+       zoom: 10,
+       center: coords,
+       mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+   
+
+     var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+     var marker = new google.maps.Marker({
+        map:map,
+        position: coords
+     });
+
+     var marker1 = new google.maps.Marker ({
+      map:map,
+      position: coords1
+     });
+     var marker2 = new google.maps.Marker ({
+      map:map,
+      position: coords2
+     });
+     var marker3 = new google.maps.Marker ({
+      map:map,
+      position: coords3
+     });
+     var marker4 = new google.maps.Marker ({
+      map:map,
+      position: coords4
+     });
+     var marker5 = new google.maps.Marker ({
+      map:map,
+      position: coords5
+     });
+    }
+
+    //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+    function calcCrow(lat1, lon1, lat2, lon2) 
+    {
+      var R = 6371; // km
+      var dLat = toRad(lat2-lat1);
+      var dLon = toRad(lon2-lon1);
+      var lat1 = toRad(lat1);
+      var lat2 = toRad(lat2);
+
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c;
+      return d;
+    }
+
+    // Converts numeric degrees to radians
+    function toRad(Value) 
+    {
+        return Value * Math.PI / 180;
+    }
+
+function failure() {
+    
+}
+    </script>
+
+    </body>
+</html>

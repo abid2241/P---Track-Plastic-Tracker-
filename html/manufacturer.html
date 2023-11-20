@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/dashstyle.css">
+       
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    <body>
+        <section class="header">
+          
+            <nav>
+                <a href="anvesha.html" class="logo">
+                    <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+                 <p><b>P-TRACK</b></p>
+                </a>            
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>    
+                    <ul class="components">
+                        <li id="s"><a href="">HOME</a></li>
+                        <li id="s"><a href="">PROFILE</a></li>
+                        <li id="s"><a href="">NOTIFICATIONS</a></li>
+                        <li id="s"><a href="">MANUAL</a></li>
+                        <li id="s"><a href="">LOGOUT</a></li>
+                        <li><i class="fa fa-user-circle-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+         </section>
+         <br>
+        <section>
+            <div class="heading">
+                <p>Welcome Manufacturer!</p>
+            </div>
+        </section>
+        <section>
+            <div class="whole">
+                <div class="options">
+                    <p><a href="../html/qrgenerator.html"><img src="../img/img-01.jpg"></a></p><br>
+                    <p>Generate QR Code</p>
+                </div>
+                <div class="options">
+                    <p><a href="view.html"><img src="../img/img-01.jpg"></a></p><br>
+                    <p>Nearby Recycling Units</p>
+                </div>
+            </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="whole" style="justify-content : space-around;">
+                <p>DESIGN : <span>ANVESHA</span></p>
+                <p>COPYRIGHTS 2022 <span>P-TRACK</span></p>
+            </div>
+        </footer>
+        <!--JAVASCRIPT RESPONSIVE MENU-->
+        <script>
+            var navlink= document.getElementById("navLinks");
+            function showMenu(){
+                navlink.style.display="block";
+              navlink.style.right="0";
+            }
+            function hideMenu(){
+              navlink.style.display="none";
+            }
+        </script>     
+    </body>
+</html>

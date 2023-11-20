@@ -1,0 +1,223 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+function getLocation() {
+var x = document.getElementById("demo");
+var y = document.getElementById("demo1");
+var l;
+var lo;
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+    document.fpage.lat.value=position.coords.latitude ;
+    document.fpage.long.value= position.coords.longitude;
+    this.l=position.coords.latitude;
+    this.lo=position.coords.longitude;   
+}
+</script>
+    
+<script>
+    function showMenu()
+    {
+    var navlink= document.getElementById("navLinks");
+    navlink.style.display="block";
+    navlink.style.right="0";
+    }
+    function hideMenu()
+    {
+      var navlink= document.getElementById("navLinks");
+      navlink.style.display="none";
+    }
+    function validate()
+    {
+      //  event.preventDefault();
+    var letters = /^[A-Za-z]+$/;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var fn=document.fpage.fname.value;
+    var ln=document.fpage.lname.value;
+    var eid=document.fpage.email.value;
+    var c=document.fpage.country.value;
+    var s=document.fpage.state.value;
+    var pn=document.fpage.pnumber.value;
+    var pass1=document.fpage.pass.value;
+    var cpass1=document.fpage.cpass.value;
+    var len1=pass1.length;
+    var len2=cpass1.length;
+    var v=0;
+    var len=pn.length;
+        if(fn.match(letters)){
+        }
+        else{
+            alert('Enter a proper First name');
+            v=1;
+            event.preventDefault();
+            document.fpage.fname.style.borderColor="Red";
+            return false;
+        }
+        if(ln.match(letters)){
+        }
+        else{
+        alert('Enter a proper Last name');  
+        v=1;
+        event.preventDefault();
+        document.fpage.lname.style.borderColor="Red";
+        return false;
+        }
+        if(len1<8 || len2<8)
+        {
+            alert('Password is less than 8 characters'); 
+            v=1;
+            event.preventDefault();
+            document.fpage.pass.style.borderColor="Red";
+            document.fpage.cpass.style.borderColor="Red";
+            return false;
+        }
+        if(pass1.localeCompare(cpass1)!=0){
+            alert('Passwords did not match'); 
+            v=1;
+            event.preventDefault();
+            document.fpage.pass.style.borderColor="Red";
+            document.fpage.cpass.style.borderColor="Red";
+            return false;
+        }
+        if (!filter.test(eid))
+        {
+            alert('Enter a valid email');
+            event.preventDefault();
+            v=1;
+            document.fpage.email.style.borderColor="Red";
+            return false;
+        }
+        if(len!=10)
+        {
+          alert('Enter a valid phone number');
+          event.preventDefault();
+          v=1;
+            document.fpage.pnumber.style.borderColor="Red";
+            return false;
+        }
+        if(isNaN(pn))
+        {
+            alert('Enter a valid phone number format');
+            event.preventDefault();
+            v=1;
+            document.fpage.pnumber.style.borderColor="Red";
+            return false;
+        }
+       if(v==0)
+       {
+        document.fpage.submit();
+        return true;
+       }
+    }
+
+</script>
+</head>
+    <body class="join">
+    <nav>
+        <a href="anvesha.html" class="logo">
+            <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+         <p><b>P-TRACK</b></p>
+        </a>            
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>    
+            <ul class="components">
+                <li id="s"><a href="anvesha.html">HOME</a></li>
+                <li id="s"><a href="">ABOUT</a></li>
+                <li id="s"><a href="">ANNOUNCEMENTS</a></li>
+                <li id="s"><a href="">CONTACT</a></li>
+                <li id="s"><a href="">DASHBOARD</a></li>
+                <li><button onclick="location.href='signup.html'">Join Us!</button></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <!--MAIN FORM DIV-->
+    <div class="mform" id="mainform"><br>
+    <div class="title"><b>Fill the following details<br></b></div>
+    <br><br><br>
+    <form action="../php/sign2.php" method="post" name="fpage">
+        <div class="userdetails">
+            <div class="inputbox">
+                <span class="details">First Name</span>
+                <input type="text" placeholder="Your Name" name="fname" required>
+            </div>
+            <div class="inputbox">
+                <span class="details">Last Name</span>
+                <input type="text" placeholder="Your Name" name="lname" required>
+            </div>
+            <div class="inputbox">
+                <span class="details">Password</span>
+                <input type="password" placeholder="Enter a Password" name="pass" required>
+            </div>
+            <div class="inputbox">
+                <span class="details">Confirm Password</span>
+                <input type="password" placeholder="Re-enter password" name="cpass" required>
+            </div>
+            <div class="inputbox">
+                <span class="details">Email-Id</span>
+                <input type="text" placeholder="Email-Id" name='email' required>
+            </div>
+            <div class="inputbox">
+                <span class="details">Phone Number</span>
+                <input type="text" placeholder="Phone Number" name="pnumber" required>
+            </div>
+       
+            <div class="inputbox">
+                <span class="details">Location</span>
+                <button name="butn" onclick="getLocation();">Locate Me</button>
+            </div>  
+            <div class="inputbox">
+                <span class="details">Latitude</span>
+                <input type="text" placeholder="latitude" name="lat" required><br>
+            </div>  
+            <div class="inputbox">
+                <span class="details">Longitude</span>
+                <input type="text" placeholder="Longitude" name="long"  required><br>
+            </div>  
+            <div class="inputbox">
+                <span class="details">city</span>
+                <input type="text" placeholder="Name of the city" name="city" required>
+            </div> 
+
+            <div class="inputbox">
+                <span class="details">State</span>
+                <input type="text" placeholder="Name of the State" name="state" required>
+            </div> 
+
+            <div class="gender-details">
+                <span class="gender-title">Gender</span>
+                <div class="category">
+                <p> <input type='radio' value="male" name="gen" >Male </p>
+                <p> <input type='radio' value="female" name="gen">Female </p>
+                <p> <input type='radio' value="not applicable" name="gen">Prefer not to say </p>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+            <div class="but" style="text-align:center;">
+                <button type="submit" name="submit2" style="width:250px;" onclick="return validate();" >Verify Email</button><br><br><br>
+            </div> 
+    </form>
+    </div>
+    <br><br><br>
+    <footer class="footer">
+        <div class="whole" style="justify-content : space-around;">
+            <p>DESIGN : <span>ANVESHA</span></p>
+            <p>COPYRIGHTS 2022 <span>P-TRACK</span></p>
+        </div>
+    </footer>
+    <!--JAVASCRIPT FORM VALIDATION-->
+</body>
+</html>

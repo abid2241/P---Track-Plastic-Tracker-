@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <style>
+            #preview{
+                border-radius: 20px;}
+            h1{
+                font-size:48px;}
+            .invisible{
+                display:block;
+            }
+            @media(max-width: 700px)
+            {
+                #preview{
+                    width : 100%;}
+                h1 {
+                    font-size : 28px;}
+            }
+        </style>
+        <link rel="stylesheet" href="../css/dashstyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudfare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudfare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+        <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bbotstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></script>
+        <script>
+        function showMenu()
+        {
+           var navlink= document.getElementById("navLinks");
+           navlink.style.display="block";
+           navlink.style.right="0";
+        }
+       function hideMenu()
+       {
+          var navlink= document.getElementById("navLinks");
+          navlink.style.display="none";
+       }
+      </script>
+</head>
+    <body class="bg">
+        <section class="header">
+            <nav>
+                <a href="anvesha.html" class="logo">
+                    <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+                 <p><b>P-TRACK</b></p>
+                </a>            
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>    
+                    <ul class="components">
+                        <li id="s"><a href="">HOME</a></li>
+                        <li id="s"><a href="">PROFILE</a></li>
+                        <li id="s"><a href="">NOTIFICATIONS</a></li>
+                        <li id="s"><a href="">MANUAL</a></li>
+                        <li id="s"><a href="">LOGOUT</a></li>
+                        <li><i class="fa fa-user-circle-o" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+         </section>
+         <section>
+            <div class="generator" >
+                <div class="box">
+                    <h1>QR Scanner</h1>
+                    <br>
+                    <!--<hr style="background-color: #099; height: 2px; border: none; margin :0px 180px;">
+                    <br><br>-->
+                    <form action="../php/qrscan.php" method="post" name="fpage">
+                        <div class="scanner">
+                            <p>
+                                <video id="preview" width="60%"></video>
+                            </p><br>
+                            <p class="invisible">
+                                <input type="text" id="text" readonly="" name="text">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+         </section>
+         <footer class="footer">
+            <div class="whole" style="justify-content : space-around;">
+                <p>DESIGN : <span>ANVESHA</span></p>
+                <p>COPYRIGHTS 2022 <span>P-TRACK</span></p>
+            </div>
+        </footer>
+        <script>
+            let scanner=new Instascan.Scanner({video: document.getElementById("preview")});
+            Instascan.Camera.getCameras().then(function(cameras){
+                if(cameras.length>0)
+                {
+                    scanner.start(cameras[0]);
+                }
+                else
+                {
+                    alert("No cameras found");
+                }
+            }).catch(function(e){
+                console.error(e);
+            });
+            scanner.addListener('scan',function(c){
+                val(c);
+            });
+            function val(p)
+            {
+                if(p.includes("CUI") && p.includes("DOM"))
+                {
+                    if(p.includes("CPQ") || p.includes("CCQ") || p.includes("CMQ"))
+                    {
+                        document.fpage.text.value=p;
+                        document.fpage.submit();
+                    }
+                    else
+                    {
+                        event.preventDefault();
+                        alert("Invalid QR Code");
+                    }
+                }
+            }
+          </script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"  initial-scale="1.0">
+        <title>Anvesha</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+    function showMenu()
+    {
+    var navlink= document.getElementById("navLinks");
+    navlink.style.display="block";
+    navlink.style.right="0";
+    }
+    function hideMenu()
+    {
+      var navlink= document.getElementById("navLinks");
+      navlink.style.display="none";
+    }
+</script>
+</head>
+    <body class="join">
+    <nav>
+        <a href="anvesha.html" class="logo">
+            <!--logo--><img src="../img/logo.jpeg" height="90px" width="90px" id="pic"/><br>
+         <p><b>P-TRACK</b></p>
+        </a>            
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>    
+            <ul class="components">
+                <li id="s"><a href="anvesha.html">HOME</a></li>
+                <li id="s"><a href="">ABOUT</a></li>
+                <li id="s"><a href="">ANNOUNCEMENTS</a></li>
+                <li id="s"><a href="">CONTACT</a></li>
+                <li id="s"><a href="">DASHBOARD</a></li>
+                <li><button onclick="location.href='signup.html'">Join Us!</button></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <!--MAIN FORM DIV-->
+    <div class="mform" id="mainform"><br><br>
+    <div class="title"><b>Upload the following documents<br></b></div>
+    <br><br><br>
+    <form action="../php/sign3.php" method="post" name="fpage" enctype="multipart/form-data">
+        <div class="userdetails fileupload">
+            <div class="inputbox">
+                <span class="details">Name Of Firm</span><br><br>
+                <input type="text" name="firmname" required>
+            </div>
+            <br>
+            <div >
+                <span class="details">Document Proofs</span><br><br>
+                <input type="file" name="file" class='fileinput'  required>
+            </div><hr>
+        </div>
+        <div class="mandatory" style="text-align :center;"><br>
+            <p><span><input type="checkbox" required></span> I agree to terms and conditions</p><br><br>
+        </div>
+            <div class="but" style="text-align:center;">
+             <button type="submit" name="submit3" style="width:150px;">Submit Now!</button><br><br><br>
+            </div>
+           
+    </form>
+    </div>
+    <br><br><br>
+    <footer class="footer">
+        <div class="whole" style="justify-content : space-around;">
+            <p>DESIGN : <span>ANVESHA</span></p>
+            <p>COPYRIGHTS 2022 <span>P-TRACK</span></p>
+        </div>
+    </footer>
+</body>
+</html>

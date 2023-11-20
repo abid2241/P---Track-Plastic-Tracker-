@@ -1,0 +1,274 @@
+*{
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+     
+    width:100%;
+    position: relative;
+    
+}
+.bg
+{
+    background-color: #0cc;
+}
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:2%;
+    background-color: #0cc;
+}
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding:8px 12px;
+    position:relative;
+}
+.nav-links ul li a{
+ color:white;
+ text-decoration: none;
+ font-size: 15px;
+}
+nav li .fa{
+    display: block;
+    color:white;
+    cursor: pointer;
+    font-size: 22px;
+}
+.logo{
+    color:white;
+    text-decoration: none;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+#pic{
+    float:"left";
+    }
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background: #099;
+    display:block;
+    margin: auto;
+    transition: 0.5s;
+}
+#s:hover::after{
+    width:100%;
+}
+.mainline{
+    color: white;
+    position: absolute;
+    top:22%;
+    left: 6%;
+   /* transform: translate(-50%,-50%);*/
+    text-align: center;
+    color: #099;
+ 
+}
+.mainline h1{
+    font-size: 62px;
+}
+.mainline p{
+    margin: 10px 0 40px;
+    font-size: 18px;
+    color: #099;
+}
+button{
+    /* background: linear-gradient(to right,#7e4915,#683b2b);*/
+    background-color: #099;
+      color: white;
+      border-radius: 50px;
+      padding: 1rem 1.25rem;
+      border: none;
+      cursor:pointer;
+   /*   border:1px solid white;*/
+      position:relative;
+    }
+    button:hover{
+        background-color: #099;
+        transition: 0.5s;
+        border: 1px solid #0cc;
+        color:white;
+        box-shadow: 10px 5px 10px 0px #099;
+        position : relative;
+    }
+    nav .fa{
+        display: none;
+    }
+    /*welcome*/
+    .heading{
+        text-align : center;
+        font-size : 36px;
+        color : #099;
+    }
+    .whole
+    {
+        display : flex;
+        flex-direction : row;
+        flex-wrap : wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .whole .options
+    {
+        margin : 20px;
+        display : flex;
+        flex-direction : column;
+        align-items: center;
+        justify-content : space-between;
+        color : #099;
+        font-size : 22px;
+        font-weight :600;
+    }
+    .options a img{
+        width :100%;
+    }
+    .options a:hover img
+    {
+        position : relative;
+        box-shadow:rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    .footer
+    {
+       background-color: #0cc;
+       color : white;
+       padding : 25px;
+       font-size : 20px;
+    }
+    .generator
+    {
+        display : flex;
+        flex-direction : column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    .generator .box
+    {
+        margin : 50px 100px;
+        background-color: white;
+        padding : 50px 50px;
+        width : 60%;
+        border-radius: 25px;
+    }
+    .form-content
+    {
+        padding : 50px;
+    }
+    .form-content p
+    {
+        padding : 20px;
+    }
+    .form-content p input{
+        width : 300px;
+        height  : 40px;
+        border : 2px solid #999;
+        text-align: center;
+        border-radius: 5px;
+        font-size : 18px;
+    }
+    .form-content input[type=submit]
+    {
+        width : 300px;
+        height  : 50px;
+        border : 2px solid #099;
+        text-align: center;
+        border-radius: 100px;
+        background-color: #099;
+        font-size: 18px;
+        color : white;
+        width : 200px;
+    }
+    .form-content p input[type=submit]:hover
+    {
+        cursor : pointer;
+        width : 300px;
+        height  : 50px;
+        border : 2px solid #099;
+        box-shadow : 5px 8px #099;
+        text-align: center;
+        border-radius: 30px;
+        background-color: #0cc;
+        font-size: 20px;
+        color : white;
+        width : 200px;
+    }
+    .form-content p input:hover{
+        border : 3px solid #099;
+    }
+    .box h1{
+        cursor : pointer;
+        font-size : 28px;
+        color : #099;
+    }
+    .box hr{
+        margin :0px 60px;
+    }
+    @media(max-width: 700px){
+        .nav-links ul li{
+            display: block;
+      
+           }
+           .nav-links{
+               position:absolute;
+               background: white;
+               height: 100vh;
+               width:200px;
+               top:0;
+               right: -200px;
+               text-align:left;
+               z-index: 2;
+               transition: 1s;
+               display: none;
+           }
+           nav .fa{
+               display: block;
+               color:#099;
+               margin:10px;
+               cursor: pointer;
+               font-size: 22px;
+           }
+           .nav-links ul{
+               padding: 30px;
+               
+           }
+           .nav-links ul li a{
+               color: #099;
+           } 
+             .fa fa-bars{
+            display: block;
+        }
+        .box h1
+        {
+            font-size : 16px;
+        }
+
+        .form-content
+        {
+            padding : 10px;
+        }
+        .form-content p input{
+            width : 200px;
+            height  : 40px;
+            font-size :14px;
+        }
+        #text
+        {
+            width :300px;
+        }
+        .footer{
+            font-size :12px;
+        }
+    }
